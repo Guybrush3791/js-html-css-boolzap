@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Boolzapp</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" charset="utf-8"></script>
+
+    </head>
+    <body>
+
+        <header></header>
+
+        <div class="container">
+            <div class="left">
+                <div class="header-left">
+                    <div class="header-left-logo f-left">
+                        <img src="img/avatar_io.jpg" alt="">
+                    </div>
+                    <div class="header-left-icons f-right">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="left-disclaimer">
+                    <div class="left-disclaimer-logo f-left">
+                        <i class="fa fa-bell-slash" aria-hidden="true"></i>
+                    </div>
+                    <div class="left-disclaimer-text f-right">
+                        <h3>Ricevi notifiche di nuovi messaggi</h3>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <div class="left-searchbar">
+                    <label class="search-label" for="search">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </label>
+                    <input  id="contacts-filter"
+                            class="left-search-input"
+                            type="text"
+                            placeholder="Cerca o inizia una nuova chat"
+                            name="" value="">
+                </div>
+                <div class="contacts">
+                    <div class="contact" data-id="0">
+                        <div class="contact-logo">
+                            <img src="img/avatar_1.jpg" alt="">
+                        </div>
+                        <div class="contact-info">
+                            <h3>
+                                <span class="contact-name">Simo</span>
+                                <span class="contact-time f-right">10.18</span>
+                            </h3>
+                            <small>Non poteva essere altrimenti</small>
+                        </div>
+                    </div>
+                    <div class="contact active" data-id="1">
+                        <div class="contact-logo">
+                            <img src="img/avatar_2.jpg" alt="">
+                        </div>
+                        <div class="contact-info">
+                            <h3>
+                                <span class="contact-name">Guybrush</span>
+                                <span class="contact-time f-right">10.18</span>
+                            </h3>
+                            <small>Non poteva essere altrimenti</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="header-right">
+                    <div class="header-right-log f-left">
+                        <img src="img/avatar_2.jpg" alt="">
+                        <h3>
+                            <span id="header-right-contact-name">Guybrush</span>
+                            <br>
+                            <small>Ultimo accesso oggi alle 10.10</small>
+                        </h3>
+                    </div>
+                    <div class="header-right-icons f-right">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="right-messages-container">
+                    <div class="right-messages" data-id="0">
+                        <div class="message received">
+                            <span class="message-text">Ciao come stai?</span>
+                            <span class="message-time">09.45</span>
+                            <i class="fa fa-chevron-down f-right message-options"></i>
+                            <div class="message-options-panel">
+                                <div class="message-info">Info message</div>
+                                <div class="message-destroy">Cancella messaggio</div>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <span class="message-text">Molto bene, te?</span>
+                            <span class="message-time">09.47</span>
+                            <i class="fa fa-chevron-down f-right message-options"></i>
+                            <div class="message-options-panel">
+                                <div class="message-info">Info message</div>
+                                <div class="message-destroy">Cancella messaggio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-messages active" data-id="1">
+                        <div class="message received">
+                            <span class="message-text">Ciao come va? Fa freddo da te?</span>
+                            <span class="message-time">09.45</span>
+                            <i class="fa fa-chevron-down f-right message-options"></i>
+                            <div class="message-options-panel">
+                                <div class="message-info">Info message</div>
+                                <div class="message-destroy">Cancella messaggio</div>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <span class="message-text">No, noi si va al mare. E voi?</span>
+                            <span class="message-time">09.47</span>
+                            <i class="fa fa-chevron-down f-right message-options"></i>
+                            <div class="message-options-panel">
+                                <div class="message-info">Info message</div>
+                                <div class="message-destroy">Cancella messaggio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-footer">
+                    <div class="right-footer-icon f-left">
+                        <i class="far fa-smile"></i>
+                    </div>
+                    <input
+                        id="new-message-input"
+                        class="new-message-input"
+                        placeholder="Scrivi un messaggio"
+                        type="text"
+                        name=""
+                        value="">
+                    <div class="right-footer-icon f-right">
+                        <i id="sendButton" class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="template-message" style="display:none">
+            <div class="message">
+                <span id="message-text" class="message-text"></span>
+                <span id="message-time" class="message-time"></span>
+                <i class="fa fa-chevron-down f-right message-options"></i>
+                <div class="message-options-panel">
+                    <div class="message-info">Info message</div>
+                    <div class="message-destroy">Cancella messaggio</div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
